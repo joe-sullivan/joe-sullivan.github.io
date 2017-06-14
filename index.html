@@ -1,1 +1,29 @@
-Hello World
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Joe Sullivan</title>
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+			</ul>
+		</nav>
+		<div class="container">
+			<div class="posts">
+				<ul>
+					{% for post in site.posts %}
+						<li>
+							<a href="{{ post.url }}">{{ post.title }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div><!-- /.posts -->
+		</div><!-- /.container -->
+		<footer>
+			<ul>
+				<li><a href="https://github.com/joe-sullivan">github.com/joe-sullivan</a></li>
+			</ul>
+		</footer>
+	</body>
+</html>
