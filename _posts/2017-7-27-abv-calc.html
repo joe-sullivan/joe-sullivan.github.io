@@ -30,8 +30,8 @@ title: ABV Calculator for Refractometers
 	</script>
 	<body>
 		<form oninput="og.value=SG(ob.value,ob.value);sg.value=SG(ob.value,ab.value);abv.value=ABV(og.value, sg.value)">
-			Starting Brix: <input type="number" id="ob" value=0><br>
-			Current Brix: <input type="number" id="ab" value=0>
+			Starting Brix: <input type="tel" id="ob" value=0><br>
+			Current Brix: <input type="tel" id="ab" value=0>
 			<hr>
 			Original Gravity: <output name="og" for="ob"></output><br>
 			Specific Gravity: <output name="sg" for="ab"></output><br>
