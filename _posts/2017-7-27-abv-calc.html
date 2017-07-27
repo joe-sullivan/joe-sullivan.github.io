@@ -1,0 +1,42 @@
+---
+layout: post
+title: ABV Calculator for Refractometers
+---
+<html>
+	<script>
+		function round(num,x) {
+			var y = Math.pow(10,x);
+			return Math.round(num*y)/y;
+		}
+		function ABV(og, fg) {
+			var oe = -668.962 + (1262.45 * og) - (776.43 * Math.pow(og,2)) + (182.94 * Math.pow(og,3));
+			var ae = -668.962 + (1262.45 * fg) - (776.43 * Math.pow(fg,2)) + (182.94 * Math.pow(fg,3));
+			var q = .22 + (.001 * oe);
+			var re = ((q * oe) + ae) / (1 + q);
+			var abw = (oe - re) / ( 2.0665 - (.010665 * oe));
+			return round(abw * (fg / .794), 1);
+		}
+
+		function SG(ob, ab) {
+			var sg = 1.001843
+			      - (0.002318474 * ob)
+			      - (0.000007775 * Math.pow(ob,2))
+			      - (0.000000034 * Math.pow(ob,3))
+			      + (0.00574 * ab)
+			      + (0.00003344 * Math.pow(ab,2))
+			      + (0.000000086 * Math.pow(ab,3));
+			return round(sg, 3);
+		}
+	</script>
+	<body>
+		<form oninput="og.value=SG(ob.value,ob.value);sg.value=SG(ob.value,ab.value);abv.value=ABV(og.value, sg.value)">
+			Starting Brix: <input type="number" id="ob" value=0><br>
+			Current Brix: <input type="number" id="ab" value=0>
+			<hr>
+			Original Gravity: <output name="og" for="ob"></output><br>
+			Specific Gravity: <output name="sg" for="ab"></output><br>
+			Alcohol / Volume: <output name="abv" for="ob ab"></output>%
+		</form>
+	</body>
+</html>
+
