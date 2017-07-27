@@ -45,7 +45,7 @@ nav ul li {
 
 body {
 	margin: 1.5em auto;
-	width: 70%;
+    max-width: 800px;
 	background-color: var(--main-bg-color);
 }
 
