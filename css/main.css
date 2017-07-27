@@ -71,31 +71,22 @@ h1 {
 	color: var(--content-bg-color);
 	background: var(--text-color-alt);
 	border-radius: 2px;
-	font-size: 1.5em;
 }
 h2 {
 	border-bottom: 1px solid var(--text-color-alt);
 	color: var(--text-color-alt);
-	font-size: 1.5em;
 }
 h3 {
 	color: var(--text-color-alt);
-	font-size: 1.3em;
 }
 h4 {
 	color: var(--text-color-alt);
-	font-size: 1.2em;
-	margin: 1em 0;
 }
 h5 {
 	color: var(--text-color-alt);
-	font-size: 1.1em;
-	margin: 1em 0;
 }
 h6 {
 	color: var(--text-color-alt);
-	font-size: 1em;
-	margin: 1em 0;
 }
 
 p {
@@ -135,12 +126,10 @@ tr:hover {
 }
 
 .PageNavigation {
-	font-size: 1em;
 	display: block;
 	width: auto;
 	overflow: hidden;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding: 1em;
 }
 
 .PageNavigation a {
@@ -155,7 +144,6 @@ tr:hover {
 
 ul.posts { 
 	margin: 20px auto 40px;
-	font-size: 1em;
 	line-height: 1.6em;
 	color: var(--main-bg-color);
 }
