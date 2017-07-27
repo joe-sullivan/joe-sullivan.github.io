@@ -1,6 +1,7 @@
 .highlight  {
 	background: var(--main-bg-color);
 	padding: 1em;
+	overflow: auto;
 	/*border: 2px solid var(--text-color-alt);*/
 }
 
