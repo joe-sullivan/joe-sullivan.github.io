@@ -4,7 +4,18 @@ title: A place for things
 ---
 <h1>{{ page.title }}</h1>
 <ul class="posts">
-	{% for post in site.posts %}
+	{% for post in paginator.posts %}
 		<li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
 	{% endfor %}
 </ul>
+
+<div class="PageNavigation">
+	{% if paginator.previous_page_path %}
+		<a class="prev" href="{{paginator.previous_page_path}}">« Previous</a>
+	{% else %}
+		<a class="prev" hidden></a>
+	{% endif %}
+	{% if paginator.next_page_path %}
+		<a class="next" href="{{paginator.next_page_path}}">Next »</a>
+	{% endif %}
+</div>
