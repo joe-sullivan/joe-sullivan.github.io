@@ -2,6 +2,27 @@
 layout: default
 title: Joe Sullivan
 ---
-<div class="blurb">
-	<p>Coming Soon</p>
-</div><!-- /.blurb -->
+
+{% assign post = site.posts.first %}
+<article>
+	<h1>{{ post.title }}</h1>
+	<div class="meta">
+		<div class="site-tags">{{ post.tags | sort | join: ", " }}</div>
+		<div>{{ post.date | date_to_string }}</div>
+	</div>
+	
+	<div class="post">
+		{{ post.content }}
+	</div>
+</article>
+
+<div class="PageNavigation">
+	{% if post.previous.url %}
+		<a class="prev" href="{{post.previous.url}}">« {{post.previous.title}}</a>
+	{% else %} <!-- ensure something goes here -->
+		<a class="prev" hidden></a>
+	{% endif %}
+	{% if post.next.url %}
+		<a class="next" href="{{post.next.url}}">{{post.next.title}} »</a>
+	{% endif %}
+</div>
