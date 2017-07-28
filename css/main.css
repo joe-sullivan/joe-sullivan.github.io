@@ -84,6 +84,12 @@ h4 { color: var(--text-color-alt); }
 h5 { color: var(--text-color-alt); }
 h6 { color: var(--text-color-alt); }
 
+@media (max-width: 767px) {
+	.subtitle {
+		display: none;
+	}
+}
+
 p { text-align: justify; }
 
 a {

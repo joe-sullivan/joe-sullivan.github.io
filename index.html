@@ -5,7 +5,7 @@ title: Joe Sullivan
 
 {% assign post = site.posts.first %}
 <article>
-	<h1>{{ post.title }}</h1>
+	<h1>{{ post.title }}<span class="subtitle"> {{ post.subtitle }}</span></h1>
 	<div class="meta">
 		<div class="site-tags">{{ post.tags | sort | join: ", " }}</div>
 		<div>{{ post.date | date_to_string }}</div>
