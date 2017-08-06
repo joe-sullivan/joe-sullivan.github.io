@@ -116,6 +116,8 @@ th, td { padding: .25em; }
 td { border-bottom: 1px solid var(--content-bg-color-alt); }
 tr:hover { background-color: var(--content-bg-color-alt); }
 
+code { background: var(--content-bg-color-alt); }
+
 .PageNavigation {
 	display: block;
 	width: auto;
